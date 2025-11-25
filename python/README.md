@@ -1,0 +1,1 @@
+# Modulo pyhton para entrenamiento
