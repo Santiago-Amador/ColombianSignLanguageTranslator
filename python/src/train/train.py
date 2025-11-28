@@ -58,7 +58,7 @@ def train_model():
 
     final_path = os.path.join(models_dir, "cnn_signs_final.keras")
     model.save(final_path)
-    print(f"💾 Modelo final guardado en: {final_path}")
+    print(f"Modelo final guardado en: {final_path}")
 
 
 def plot_training(history):
