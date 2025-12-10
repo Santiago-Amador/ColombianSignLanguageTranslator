@@ -6,7 +6,7 @@ PATHS = {
     "BASE": BASE_DIR,
     "RAW_DATA": os.path.join(BASE_DIR, "data", "raw"),  # <-- FIX AQUÍ
     "PROCESSED_DATA": os.path.join(BASE_DIR, "data", "processed"),
-    "MODELS": os.path.join(BASE_DIR, "models"),
+    "MODELS": os.path.join(BASE_DIR, "model"),
 }
 
 IMAGE = {

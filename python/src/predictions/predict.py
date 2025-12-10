@@ -41,7 +41,7 @@ if __name__ == "__main__":
             os.path.dirname(__file__),
             "..",
             "train",
-            "models",
+            "model",
             "cnn_signs_20251128_160826.keras"
         )
 
