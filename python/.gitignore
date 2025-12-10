@@ -1,6 +1,8 @@
-models/
+models/checkpoints
+*.keras
 *.tflite
 *.h5
+*.onnx
 __pycache__/
 venv/
 .env
