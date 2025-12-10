@@ -27,7 +27,7 @@ def train_model():
     os.makedirs(models_dir, exist_ok=True)
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    checkpoint_path = os.path.join(models_dir, f"cnn_signs_{timestamp}.keras")
+    checkpoint_path = os.path.join(models_dir, f"cnn_signs_{timestamp}.h5")
 
     callbacks = [
         tf.keras.callbacks.EarlyStopping(
@@ -36,9 +36,10 @@ def train_model():
             restore_best_weights=True
         ),
         tf.keras.callbacks.ModelCheckpoint(
-            checkpoint_path,    
+            checkpoint_path,
             monitor="val_accuracy",
-            save_best_only=True
+            save_best_only=True,
+            save_format="h5"
         )
     ]
 
@@ -57,7 +58,7 @@ def train_model():
     plot_training(history)
 
     final_path = os.path.join(models_dir, "cnn_signs_final.keras")
-    model.save(final_path)
+    model.save("models/cnn_signs_tf14.h5")
     print(f"Modelo final guardado en: {final_path}")
 
 
@@ -72,14 +73,14 @@ def plot_training(history):
 
     plt.figure(figsize=(12, 5))
 
-    # Accuracy plot
+
     plt.subplot(1, 2, 1)
     plt.plot(epochs_range, acc, label="Entrenamiento")
     plt.plot(epochs_range, val_acc, label="Validación")
     plt.title("Accuracy")
     plt.legend()
 
-    # Loss plot
+
     plt.subplot(1, 2, 2)
     plt.plot(epochs_range, loss, label="Entrenamiento")
     plt.plot(epochs_range, val_loss, label="Validación")

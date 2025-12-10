@@ -48,7 +48,6 @@ if __name__ == "__main__":
         model_path = os.path.abspath(model_path)
         print("Usando modelo:", model_path)
 
-        img = (r"C:\Users\USUARIO\Desktop\U\2025-2\ColombianSignLanguageTranslator\ColombianSignLanguageTranslator"
-               r"\python\data\test_images\b_001.jpg")
+        img = os.path.join(PATHS["RAW_DATA"], "test_images", "b_001.jpg")
         print("Imagen usada:", img)
         predict_image(model_path, img)

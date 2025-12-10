@@ -4,21 +4,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 PATHS = {
     "BASE": BASE_DIR,
-    "RAW_DATA": os.path.join(BASE_DIR, "data", "raw"),
+    "RAW_DATA": os.path.join(BASE_DIR, "data", "raw"),  # <-- FIX AQUÍ
     "PROCESSED_DATA": os.path.join(BASE_DIR, "data", "processed"),
     "MODELS": os.path.join(BASE_DIR, "models"),
 }
 
-
 IMAGE = {
     "WIDTH": 128,
     "HEIGHT": 128,
-    "CHANNELS": 1,
+    "CHANNELS": 3,
 }
 
-
 CLASSES = sorted(os.listdir(PATHS["RAW_DATA"]))
-
 
 TRAINING = {
     "BATCH_SIZE": 32,
