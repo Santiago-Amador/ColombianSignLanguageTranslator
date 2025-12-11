@@ -18,6 +18,7 @@ public class ONNXLoader {
 
     private final OrtEnvironment env;
     private final OrtSession session;
+    private String inputName;
 
     @Autowired
     public ONNXLoader(AppConfig appConfig, ResourceLoader resourceLoader) throws Exception {
@@ -30,10 +31,12 @@ public class ONNXLoader {
         }
         this.env = OrtEnvironment.getEnvironment();
         this.session = env.createSession(modelResource.getFile().getAbsolutePath());
+        this.inputName = session.getInputNames().iterator().next();
 
         log.info("ONNX model loaded successfully.");
         log.info("   └── Inputs : {}", session.getInputNames());
         log.info("   └── Outputs: {}", session.getOutputNames());
+
     }
 
 }
