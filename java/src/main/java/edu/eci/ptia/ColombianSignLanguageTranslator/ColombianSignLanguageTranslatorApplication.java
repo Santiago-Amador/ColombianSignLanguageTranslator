@@ -1,4 +1,4 @@
-package java.edu.eci.ptia.ColombianSignLanguageTranslator;
+package edu.eci.ptia.ColombianSignLanguageTranslator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
