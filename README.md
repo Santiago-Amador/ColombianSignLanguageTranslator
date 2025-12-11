@@ -8,6 +8,7 @@ Estructura del proyecto
 
 ```yml
 Python Version: 3.10
+Java: 17
 Markdown: 3.10
 Numpy : 2.2.6  
 Keras: 3.12.0 
