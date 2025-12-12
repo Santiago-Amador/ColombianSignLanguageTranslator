@@ -33,16 +33,61 @@ Tensorflow: 2.20
    ```
 ## Ejecución
 
-- Ingresar imagen a predecir en /python/data/testiamges
-- Entrenar el modelo con:
+- Crear entorno virtual
 - ```bash
-   > python src/predictions/train.py
+   >cd python
+   >python -m venv venv
+   >source venv/bin/activate   # Linux/Mac
+   >venv\Scripts\activate  #Windows
    ```
-  EL modelo entrenado se guarda en: /train/models
-- Por ultimo:
+  El dataset debe estar ubicado en:
   ```bash
-   > python src/predictions/predict.py
+   >python/data/raw/
+    a/
+    b/
+    c/
+    ...
    ```
+  - Entrenar el modelo
+- ```bash
+   >python train.py
+   ```
+  - Esto generará un archivo:
+- ```bash
+   >model/cnn_signs_final.h5
+   ```
+  - Exportar a ONNX
+- ```bash
+   >python export_onnx.py
+   ```
+  Esto genera:
+- ```bash
+   >python export_onnx.py
+   ```
+  Este archivo se debe copiar a:
+- ```bash
+   >java/src/main/resources/model/cnn_signs_final.onnx
+   ```
+  Exportar lista de clases
+  Guardar las clases en:
+- ```bash
+   >java/src/main/resources/model/classes.txt
+   ```
+  Una línea por clase:
+- ```bash
+   a
+   b
+   c
+   ...
+   y
+   ```
+  Por último usar el modelo en java:
+  en la carpeta /java
+  ```bash
+   >mvn clean install
+   > mvn spring-boot:run
+   ```
+  
 ## Rutas
 Configuración
 
